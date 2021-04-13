@@ -1,4 +1,4 @@
-# SEII/Senior candidate technical challenge
+# Software Engineer Candidate technical challenge
 
 Using technology that you are comfortable with, design and deliver a solution that meets the following user stories, incorporating the supplied data.  Please submit your code via a link to a Git repository.
 
