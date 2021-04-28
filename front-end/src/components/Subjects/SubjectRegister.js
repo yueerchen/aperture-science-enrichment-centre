@@ -2,6 +2,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import { Col, Row } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 export default class QuestionView extends React.Component {
   constructor(props) {
