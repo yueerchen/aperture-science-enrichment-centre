@@ -1,0 +1,25 @@
+.jr-course-card {
+  background-color: #fff;
+  border-radius: 0;
+  border: 0;
+  /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+  /* height: 410px; */
+}
+
+.jr-course-card__name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.jr-course-card__code {
+  /*font-style: italic;*/
+  color: #9a9a9a;
+  font-size: 14px;
+}
+
+.jr-course-card__introduction {
+  color: #777;
+  word-wrap: break-word;
+  /* height: 55px; */
+}

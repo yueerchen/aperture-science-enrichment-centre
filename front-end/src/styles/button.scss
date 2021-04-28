@@ -1,0 +1,25 @@
+.btn {
+  border-radius: 0;
+}
+
+.btn-group {
+  margin-right: 5px;
+  padding: 8px 26px;
+}
+.btn-primary,
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active:focus {
+  background-color: #50bcb6; /*#3c9f4b;*/
+  border: 1px solid #50bcb6;
+}
+.btn-borderless,
+.btn-borderless:active,
+.btn-borderless:hover,
+.btn-borderless:focus,
+.btn-borderless:active:focus {
+  background-color: transparent;
+  border: 0;
+  color: #50bcb6;
+}

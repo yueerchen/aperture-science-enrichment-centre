@@ -1,0 +1,53 @@
+# Using the node alpine image to build the React app
+image: node:alpine
+
+# Cache node modules - speeds up future builds
+cache:
+  paths:
+  - node_modules
+
+# Name the stages involved in the pipeline
+stages:
+- build
+- deploy_staging
+- deploy_prod
+
+build:
+  stage: build
+  script:
+    - npm install # Install all dependencies
+    - npm run build --prod # Build for prod
+    - cp build/index.html build/404.html # Overwrite 404 page
+  artifacts:
+    paths:
+    - build 
+  only:
+    - master # Only run on master branch
+
+deploy_staging:
+  image: python:latest
+  stage: deploy_staging
+  environment: staging
+  variables:
+    GIT_STRATEGY: none
+    GIT_CHECKOUT: "false"
+  script:
+  - pip install awscli
+  - aws s3 cp ./build s3://staging-jr-lms-nick --recursive
+  only:
+  - master
+  
+deploy_prod:
+  image: python:latest
+  stage: deploy_prod
+  environment: production
+  when: manual
+  variables:
+    GIT_STRATEGY: none
+    GIT_CHECKOUT: "false"
+  script:
+  - pip install awscli
+  - aws s3 cp ./build s3://jr-lms-nick --recursive
+  only:
+  - master
+
