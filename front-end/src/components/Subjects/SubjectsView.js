@@ -110,7 +110,7 @@ class SubjectsView extends React.Component {
     aliveFilter("");
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (!isLogin()) {
       return;
     }

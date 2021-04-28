@@ -48,6 +48,7 @@
   ],
   "subjects": [
     {
+      "id": "f1ba33b5-07bf-4d55-9ea4-ea20c4348c49",
       "SubjectId": "f1ba33b5-07bf-4d55-9ea4-ea20c4348c49",
       "Username": "1",
       "TestChamber": 1,
@@ -57,6 +58,7 @@
       "Password": "ILoveCube11"
     },
     {
+      "id": "6ee6de51-a43e-48cb-83db-f6fc82f941d9",
       "SubjectId": "6ee6de51-a43e-48cb-83db-f6fc82f941d9",
       "Username": "2",
       "TestChamber": 14,
@@ -66,6 +68,7 @@
       "Password": "WeightedLove"
     },
     {
+      "id": "442619aa-8850-47b0-8c85-f46f6b5ba4a8",
       "SubjectId": "442619aa-8850-47b0-8c85-f46f6b5ba4a8",
       "Username": "3",
       "TestChamber": 54,
@@ -75,6 +78,7 @@
       "Password": "Cubecubecube"
     },
     {
+      "id": "ed5183fc-af62-4867-a705-a3ef96024e34",
       "SubjectId": "ed5183fc-af62-4867-a705-a3ef96024e34",
       "Username": "4",
       "TestChamber": 1,
@@ -84,6 +88,7 @@
       "Password": "thereisnocube"
     },
     {
+      "id": "614cfcb9-0111-43dd-81c7-5a4340e9f99e",
       "SubjectId": "614cfcb9-0111-43dd-81c7-5a4340e9f99e",
       "Username": "5",
       "TestChamber": 14,
@@ -93,6 +98,7 @@
       "Password": "123companion"
     },
     {
+      "id": "175636a6-1e4a-4e8a-b72d-145e9f042bae",
       "SubjectId": "175636a6-1e4a-4e8a-b72d-145e9f042bae",
       "Username": "6",
       "TestChamber": 54,
