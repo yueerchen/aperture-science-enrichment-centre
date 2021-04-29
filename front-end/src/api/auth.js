@@ -18,6 +18,8 @@ export function logout() {
 
 export function isLogin() {
   let token = localStorage.jwt_token;
+  // check token expire
+  // jwt_decode(token).exp
   if (token) {
     axios.defaults.headers.common[
       "Authorization"

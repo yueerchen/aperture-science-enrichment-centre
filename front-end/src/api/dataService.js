@@ -14,7 +14,10 @@ export function fetchQuestions() {
   });
 }
 
-export function fetchSubjects() {
+export function fetchSubjects(token) {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
   return axios
     .get("/subjects", config)
     .then(res => {

@@ -40,7 +40,7 @@ const ClearButton = props => {
 class SubjectsView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { subjects: [] };
+    this.state = { subjects: [], isLoading: true };
   }
 
   columns = [
@@ -114,13 +114,15 @@ class SubjectsView extends React.Component {
     if (!isLogin()) {
       return;
     }
-    this.setState({ isFetching: true });
-    fetchSubjects()
-      .then(subjects => this.setState({ isFetching: false, subjects }))
-      .catch(error => this.setState({ isFetching: false, error: error }));
+    fetchSubjects(localStorage.jwt_token)
+      .then(subjects => this.setState({ isLoading: false, subjects }))
+      .catch(error => this.setState({ isLoading: false, error: error }));
   }
 
   render() {
+    if (this.state.isLoading) {
+      return null;
+    }
     return (
       <div>
         <h1>All test subjects data</h1>
