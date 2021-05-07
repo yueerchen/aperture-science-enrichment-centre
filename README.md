@@ -31,7 +31,7 @@ Facility Manager - Person who maintains/deploys the management system
 | 8  | As GLaDOS, I can filter and sort test subjects based on their metadata                                                        | Should have | DONE                                                                        |
 | 9  | As a facility manager, I can retrieve the Subject Number of the subject   that has submitted the most data and is still alive | Could have  | 2h                                |
 | 10 | As a facility manager, I can test the new testing management system (unit   tests)                                            | Could have  | 3h                                                                        |
-| 11 | As a facility manager, I can deploy the new system in a docker container                                                      | Could have  | 3h                                                                        |
+| 11 | As a facility manager, I can deploy the new system in a docker container                                                      | Could have  | DONE                                                                        |
 
 You should restrict your submission to around 3 hours of work.  If you do not complete all stories in this time, please also submit an estimation of the time required to complete the remainders (and any related notes/approach you think would be helpful).
 
