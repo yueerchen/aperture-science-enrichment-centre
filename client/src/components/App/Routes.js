@@ -7,7 +7,11 @@ import { isLogin } from "../../api/auth";
 
 export default () => (
   <Switch>
-    <ProtectedRoute exact path="/" component={() => <h1>Welcome</h1>} />
+    <ProtectedRoute
+      exact
+      path="/"
+      component={() => <h1>Welcome to Aperture Science Enrichment Center</h1>}
+    />
     <Route exact path="/signin" component={SigninView} />
     <ProtectedRoute
       exact

@@ -1,10 +1,9 @@
 import axios from "axios";
 
-const config = {
-  headers: { Authorization: `Bearer ${localStorage.jwt_token}` }
-};
-
-export function fetchQuestions() {
+export function fetchQuestions(token) {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
   return axios.get("/testQuestions", config).catch(error => {
     if (error.response) {
       const errorData = error.response;
