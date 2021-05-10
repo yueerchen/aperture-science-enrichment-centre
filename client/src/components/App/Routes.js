@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import SigninView from "./SigninView";
 import SubjectView from "../Subjects/SubjectsView";
 import SubjectRegister from "../Subjects/SubjectRegister";
+import QuestionView from "../Questionnaire/QuestionView";
 import { isLogin } from "../../api/auth";
 
 export default () => (
@@ -13,11 +14,7 @@ export default () => (
       component={() => <h1>Welcome to Aperture Science Enrichment Center</h1>}
     />
     <Route exact path="/signin" component={SigninView} />
-    <ProtectedRoute
-      exact
-      path="/newTesting"
-      component={() => <h1>New Testing</h1>}
-    />
+    <ProtectedRoute exact path="/newTesting" component={QuestionView} />
     <ProtectedRoute exact path="/history" component={() => <h1>History</h1>} />
     <ProtectedRoute
       exact

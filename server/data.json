@@ -110,7 +110,7 @@
   ],
   "testSubmissions": [
     {
-      "Id": 1,
+      "id": 1,
       "Date": "2021-01-01T00:00:00Z",
       "SubjectId": "175636a6-1e4a-4e8a-b72d-145e9f042bae",
       "Responses": [
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "Id": 2,
+      "id": 2,
       "Date": "2021-01-02T00:00:00Z",
       "SubjectId": "175636a6-1e4a-4e8a-b72d-145e9f042bae",
       "Responses": [
@@ -156,7 +156,7 @@
       ]
     },
     {
-      "Id": 3,
+      "id": 3,
       "Date": "2021-01-10T00:00:00Z",
       "SubjectId": "175636a6-1e4a-4e8a-b72d-145e9f042bae",
       "Responses": [
@@ -179,7 +179,7 @@
       ]
     },
     {
-      "Id": 4,
+      "id": 4,
       "Date": "2021-01-01T00:00:00Z",
       "SubjectId": "ed5183fc-af62-4867-a705-a3ef96024e34",
       "Responses": [
@@ -202,7 +202,7 @@
       ]
     },
     {
-      "Id": 5,
+      "id": 5,
       "Date": "2021-01-08T00:00:00Z",
       "SubjectId": "442619aa-8850-47b0-8c85-f46f6b5ba4a8",
       "Responses": [
@@ -225,7 +225,7 @@
       ]
     },
     {
-      "Id": 6,
+      "id": 6,
       "Date": "2021-01-09T00:00:00Z",
       "SubjectId": "f1ba33b5-07bf-4d55-9ea4-ea20c4348c49",
       "Responses": [

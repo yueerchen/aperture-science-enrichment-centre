@@ -4,13 +4,33 @@ export function fetchQuestions(token) {
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   };
-  return axios.get("/testQuestions", config).catch(error => {
-    if (error.response) {
-      const errorData = error.response;
-      throw new Error(`${errorData.status}: ${errorData.statusText}`);
-    }
-    throw new Error("Some error occurred");
-  });
+  return axios
+    .get("/testQuestions", config)
+    .then(res => {
+      return res.data;
+    })
+    .catch(error => {
+      if (error.response) {
+        const errorData = error.response;
+        throw new Error(`${errorData.status}: ${errorData.statusText}`);
+      }
+      throw new Error("Some error occurred");
+    });
+}
+
+export function addResponse(data) {
+  return axios
+    .post("/testSubmissions", data)
+    .then(res => {
+      return true;
+    })
+    .catch(error => {
+      if (error.response) {
+        const errorData = error.response;
+        throw new Error(`${errorData.status}: ${errorData.statusText}`);
+      }
+      throw new Error("Some error occurred");
+    });
 }
 
 export function fetchSubjects(token) {
