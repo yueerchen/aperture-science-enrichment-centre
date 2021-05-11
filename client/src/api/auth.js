@@ -19,8 +19,10 @@ export function logout() {
 export function isLogin() {
   let token = localStorage.jwt_token;
   // check token expire
-  // jwt_decode(token).exp
   if (token) {
+    if (Date.now() >= jwt(token).exp * 1000) {
+      return false;
+    }
     axios.defaults.headers.common[
       "Authorization"
     ] = `Bearer ${localStorage.jwt_token}`;
@@ -30,16 +32,20 @@ export function isLogin() {
 
 export function isGLaDOS() {
   let isGLaDOS = false;
-  if (jwt(localStorage.jwt_token).role === "GLaDOS") {
-    isGLaDOS = true;
+  if (isLogin()) {
+    if (jwt(localStorage.jwt_token).role === "GLaDOS") {
+      isGLaDOS = true;
+    }
   }
   return !!isGLaDOS;
 }
 
 export function isSubject() {
   let isSubject = false;
-  if (jwt(localStorage.jwt_token).role === "Subject") {
-    isSubject = true;
+  if (isLogin()) {
+    if (jwt(localStorage.jwt_token).role === "Subject") {
+      isSubject = true;
+    }
   }
   return !!isSubject;
 }

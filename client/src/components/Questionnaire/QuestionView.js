@@ -37,7 +37,7 @@ export default class QuestionView extends React.Component {
       .catch(error => alert(error));
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (!isLogin()) {
       return;
     }

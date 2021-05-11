@@ -18,6 +18,24 @@ export function fetchQuestions(token) {
     });
 }
 
+export function fetchResponse(token, user) {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
+  return axios
+    .get(`/testSubmissions?SubjectId=${user}`, config)
+    .then(res => {
+      return res.data;
+    })
+    .catch(error => {
+      if (error.response) {
+        const errorData = error.response;
+        throw new Error(`${errorData.status}: ${errorData.statusText}`);
+      }
+      throw new Error("Some error occurred");
+    });
+}
+
 export function addResponse(data) {
   return axios
     .post("/testSubmissions", data)

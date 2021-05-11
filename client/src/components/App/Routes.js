@@ -4,7 +4,8 @@ import SigninView from "./SigninView";
 import SubjectView from "../Subjects/SubjectsView";
 import SubjectRegister from "../Subjects/SubjectRegister";
 import QuestionView from "../Questionnaire/QuestionView";
-import { isLogin } from "../../api/auth";
+import Submissions from "../Submissions";
+import { isLogin, isGLaDOS, isSubject} from "../../api/auth";
 
 export default () => (
   <Switch>
@@ -15,14 +16,14 @@ export default () => (
     />
     <Route exact path="/signin" component={SigninView} />
     <ProtectedRoute exact path="/newTesting" component={QuestionView} />
-    <ProtectedRoute exact path="/history" component={() => <h1>History</h1>} />
-    <ProtectedRoute
+    <ProtectedRoute exact path="/history" component={Submissions} />
+    <ProtectedAdminRoute
       exact
       path="/edit"
       component={() => <h1>Edit Questionnaire</h1>}
     />
-    <ProtectedRoute exact path="/subjects" component={SubjectView} />
-    <ProtectedRoute exact path="/newSubject" component={SubjectRegister} />
+    <ProtectedAdminRoute exact path="/subjects" component={SubjectView} />
+    <ProtectedAdminRoute exact path="/newSubject" component={SubjectRegister} />
   </Switch>
 );
 
@@ -32,6 +33,26 @@ const ProtectedRoute = ({ component: ProtectedComponent, ...rest }) => {
       {...rest}
       render={routeProps =>
         isLogin() ? (
+          <ProtectedComponent {...routeProps} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/signin",
+              state: { from: routeProps.location }
+            }}
+          />
+        )
+      }
+    />
+  );
+};
+
+const ProtectedAdminRoute = ({ component: ProtectedComponent, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={routeProps =>
+        isLogin() && isGLaDOS() ? (
           <ProtectedComponent {...routeProps} />
         ) : (
           <Redirect
